@@ -7,7 +7,8 @@ struct Node {
     int val;
 };
 
-void initNode(Node** node);
+Node* initNode(Node** node);
+void walkTree(Node* node, int depth);
 void walkTree(Node* node);
 
 #endif

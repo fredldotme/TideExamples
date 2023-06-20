@@ -1,30 +1,33 @@
+#include <lib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
-#include "lib.h"
+#include <iostream>
+#include <memory>
 
-int main (int argc, char** argv)
-{
-    printf("Treehugger v0.2, hug harder\n");
+int main(int argc, char *argv[]) {
+  printf("Treehugger v0.2, hug harder\n");
+  std::cout << "Now with more trees!" << std::endl;
 
-    {
-        time_t t;
-        srand((unsigned) time(&t));
-    }
+  usleep(10000000);
 
-    int depth = 5;
-    Node* root;
-    initNode(&root);
+  time_t t;
+  srand((unsigned)time(&t));
+  int depth = 5;
 
-    Node* nextNode = root;
-    while(depth-- > 0) { 
-        initNode(&nextNode->left);
-        initNode(&nextNode->right);
-        nextNode = rand() % 2 ? nextNode->left : nextNode->right;
-    }
+  Node* root;
+  initNode(&root);
+  Node *nextNode = root;
 
-    walkTree(root);
+  while (depth-- > 0)
+    nextNode =
+        rand() % 2 ?
+initNode(&nextNode->left) : initNode(&nextNode->right);
+  walkTree(root);
 
-    return 0;
+  printf("Hugging complete with depth %d!\n", depth);
+
+  return 0;
 }

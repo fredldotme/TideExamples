@@ -3,23 +3,35 @@
 
 #include "lib.h"
 
-void initNode(Node** node) {
+Node* initNode(Node** node) {
     *node = new Node;
 
     (*node)->left = NULL;
     (*node)->right = NULL;
     (*node)->val = rand();
+
+    return *node;
+}
+
+void walkTree(Node* node, int depth) {
+    char prefix[depth + 1];
+    for(int i = 0; i < depth; i++) {
+        prefix[i] = ' ';
+    }
+    prefix[depth] = '\0';
+
+    printf("%sValue: %d\n", prefix, node->val);
+
+    if(node->left) {
+        printf("%sGoing left\n", prefix);
+        walkTree(node->left, depth + 1);
+    }
+    if (node->right) {
+        printf("%sGoing right\n", prefix);
+        walkTree(node->right, depth + 1);
+    }
 }
 
 void walkTree(Node* node) {
-    printf("Value: %d\n", node->val);
-
-    if(node->left) {
-        printf("Going left\n");
-        walkTree(node->left);
-    }
-    if (node->right) {
-        printf("Going right\n");
-        walkTree(node->right);
-    }
+    walkTree(node, 0);
 }
