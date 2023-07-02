@@ -6,8 +6,8 @@
 Node* initNode(Node** node) {
     *node = new Node;
 
-    (*node)->left = NULL;
-    (*node)->right = NULL;
+    (*node)->left = nullptr;
+    (*node)->right = nullptr;
     (*node)->val = rand();
 
     return *node;
