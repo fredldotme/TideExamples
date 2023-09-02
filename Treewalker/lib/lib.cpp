@@ -21,6 +21,7 @@ void walkTree(Node* node, int depth) {
     prefix[depth] = '\0';
 
     printf("%sValue: %d\n", prefix, node->val);
+    fflush(stdin);
 
     if(node->left) {
         printf("%sGoing left\n", prefix);
