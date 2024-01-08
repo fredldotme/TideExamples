@@ -1,0 +1,17 @@
+# These are syscalls that the WASI runtime must provide to us.
+__wassh_fd_dup
+__wassh_fd_dup2
+__wassh_readpassphrase
+__wassh_sock_accept
+__wassh_sock_bind
+__wassh_sock_create
+__wassh_sock_connect
+__wassh_sock_get_peername
+__wassh_sock_get_opt
+__wassh_sock_listen
+__wassh_sock_recvfrom
+__wassh_sock_register_fake_addr
+__wassh_sock_sendto
+__wassh_sock_set_opt
+__wassh_tty_get_window_size
+__wassh_tty_set_window_size
