@@ -5,6 +5,10 @@
 
 #include <iostream>
 
+Node *initialize(Node *node) {
+  return rand() % 2 ? initNode(&node->left) : initNode(&node->right);
+}
+
 int main(int argc, char *argv[]) {
   std::cout << "Luke Treewalker v0.3!" << std::endl;
 
@@ -16,11 +20,10 @@ int main(int argc, char *argv[]) {
   Node *root;
   initNode(&root);
   Node *nextNode = root;
-  std::cout << "Node depth: 5" << std::endl;
+  std::cout << "Node depth: " << depth << std::endl;
 
   while (depth-- > 1) {
-    nextNode =
-        rand() % 2 ? initNode(&nextNode->left) : initNode(&nextNode->right);
+    nextNode = initialize(nextNode);
   }
 
   walkTree(root);

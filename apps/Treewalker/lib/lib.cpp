@@ -23,7 +23,7 @@ void walkTree(Node* node, int depth) {
     printf("%sValue: %d\n", prefix, node->val);
     fflush(stdin);
 
-    if(node->left) {
+    if (node->left) {
         printf("%sGoing left\n", prefix);
         walkTree(node->left, depth + 1);
     }

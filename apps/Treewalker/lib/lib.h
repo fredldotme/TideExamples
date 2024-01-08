@@ -1,4 +1,4 @@
-#ifndef THE_LIB
+ #ifndef THE_LIB
 #define THE_LIB
 
 struct Node {
