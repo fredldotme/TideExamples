@@ -28,7 +28,13 @@ extern pid_t nosystem_fork(void);
 extern pid_t nosystem_currentPid(void);
 extern pid_t nosystem_waitpid(pid_t pid, int *status, int options);
 
+//extern char * nosystem_getenv(const char *name);
+//extern int nosystem_setenv(const char* variableName, const char* value, int overwrite);
+//int nosystem_unsetenv(const char* variableName);
+
 extern int nosystem_isatty(int fd);
+//extern void nosystem_settty(FILE* _tty);
+//extern int nosystem_gettty(void);
 
 #ifdef __cplusplus
 }
